@@ -5,6 +5,8 @@ let tBody = document.getElementById('table-body')
 
 let count = 0
 
+
+// event section
 submitBtn.addEventListener('click', function(){
     if(inputField.value == ''){
         alert('Please, provide a valid text')
@@ -21,6 +23,15 @@ submitBtn.addEventListener('click', function(){
         `
 
         tBody.appendChild(newRow)
+        inputField.value = ''
 
+
+        // delete button
+        let deletebBtn = document.getElementsByClassName('btn-danger')
+        for(dBtn of deletebBtn){
+            dBtn.addEventListener('click', function(e){
+                e.target.parentNode.parentNode.style.display = 'none'
+            })
+        }
     }
 })
